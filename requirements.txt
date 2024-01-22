@@ -2,4 +2,7 @@ pandas
 numpy
 seaborn
 scikit-learn
--e .
+python-dotenv
+mysql-connector-python
+pymysql
+# -e .
