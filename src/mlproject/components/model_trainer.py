@@ -52,7 +52,7 @@ class ModelTrainer:
             )
 
             r2_val = r2_score(y_test, y_test_pred)
-
+            print(r2_val)
             return r2_val
 
         except Exception as e:

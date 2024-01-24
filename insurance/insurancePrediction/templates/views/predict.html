@@ -1,0 +1,56 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/prediction.css' %}">
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form id="msform">
+                <h1>Health Insurance Price Predictor</h1>
+                <br>
+                <fieldset>
+                    <h2 class="fs-title">Details</h2>
+                    <h3 class="fs-subtitle">Enter the required information</h3>
+                    <input type="number" name="Age" placeholder="Age"/>
+                    <input type="number" name="Height" placeholder="Height"/>
+                    <input type="number" name="Weight" placeholder="Weight"/>
+                    <div style="display: flex;">
+                        <!-- <label class="form-label">Gender</label> -->
+                       <div class="b1" style="width: 50%;">
+                        <select name="Gender" id="Gender" style="width: 100%;height:35px;">
+                            <option class="placeholder" selected disabled value="">Select your Gender</option>
+                            <option value="male">
+                                Male
+                            </option>
+                            <option value="female">
+                                Female
+                            </option>
+                        </select>
+                       </div>
+                      <div class="b1" style="width: 50%;">
+                        <select name="Smoker" id="Smoker" style="width: 100%;height:35px;">
+                            <option class="placeholder" selected disabled value="">Do you Smoke</option>
+                            <option value="yes">
+                                Yes
+                            </option>
+                            <option value="No">
+                                No
+                            </option>
+                        </select>
+                      </div>
+                    </div>
+                    <input type="button" name="submit" class="next action-button" value="Submit"/>
+                    
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
