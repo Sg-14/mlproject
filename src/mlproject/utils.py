@@ -1,5 +1,7 @@
 import os
 import sys
+
+from sklearn.model_selection import GridSearchCV
 from src.mlproject.exception import CustomException
 from src.mlproject.logger import logging
 import pandas as pd
@@ -39,3 +41,4 @@ def save_object(file_path, obj):
             pickle.dump(obj, file_obj)
     except Exception as e:
         raise CustomException(e, sys)
+    
