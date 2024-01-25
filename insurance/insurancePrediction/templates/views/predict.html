@@ -12,7 +12,8 @@
 <body>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <form id="msform">
+            <form id="msform" action="predict">
+                {% csrf_token %}
                 <h1>Health Insurance Price Predictor</h1>
                 <br>
                 <fieldset>
@@ -21,6 +22,7 @@
                     <input type="number" name="Age" placeholder="Age"/>
                     <input type="number" name="Height" placeholder="Height"/>
                     <input type="number" name="Weight" placeholder="Weight"/>
+                    <input type="number" name="Children" placeholder="No of Children"/>
                     <div style="display: flex;">
                         <!-- <label class="form-label">Gender</label> -->
                        <div class="b1" style="width: 50%;">
@@ -40,16 +42,40 @@
                             <option value="yes">
                                 Yes
                             </option>
-                            <option value="No">
+                            <option value="no">
                                 No
                             </option>
                         </select>
                       </div>
+                      <div class="b1" style="width: 50%;">
+                        <select name="region" id="region" style="width: 100%;height:35px;">
+                            <option class="placeholder" selected disabled value="">Select your region</option>
+                            <option value="southwest">
+                                Southwest
+                            </option>
+                            <option value="southeast">
+                                Southeast
+                            </option>
+                            <option value="northwest">
+                                Northwest
+                            </option>
+                            <option value="northeast">
+                                Northeast
+                            </option>
+                        </select>
+                      </div>
                     </div>
-                    <input type="button" name="submit" class="next action-button" value="Submit"/>
+                    <input type="submit" name="submit" class="next action-button" value="Submit"/>
                     
                 </fieldset>
+                <br>
+                {% if prediction != 0 %}
+                <h1>
+                    The Estimated Insurance Price for you is : {{prediction}}
+                </h1>
+                {% endif %}
             </form>
+
         </div>
     </div>
 </body>
